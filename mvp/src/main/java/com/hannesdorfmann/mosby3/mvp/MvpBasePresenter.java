@@ -17,6 +17,7 @@
 package com.hannesdorfmann.mosby3.mvp;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.UiThread;
 import java.lang.ref.WeakReference;
 
@@ -82,7 +83,7 @@ public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
    * @return <code>null</code>, if view is not attached, otherwise the concrete view instance
    * @deprecated  Use {@link #ifViewAttached(ViewAction)}
    */
-  @Deprecated @UiThread public V getView() {
+  @Deprecated @Nullable @UiThread public V getView() {
     return viewRef == null ? null : viewRef.get();
   }
 
